@@ -1,11 +1,11 @@
 import Route from '@ember/routing/route';
-import { getDocument } from 'pdfjs-dist/webpack.mjs';
+import * as pdfjs from 'pdfjs-dist/webpack.mjs';
 
 const url = '/fw4.pdf';
 
 export default class ApplicationRoute extends Route {
   async model() {
-    const loadingTask = getDocument({ url });
+    const loadingTask = (await pdfjs.default).getDocument({ url });
     return await loadingTask.promise;
   }
 }
