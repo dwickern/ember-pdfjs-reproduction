@@ -1,5 +1,5 @@
 import Route from '@ember/routing/route';
-import { getDocument } from 'pdfjs-dist/webpack';
+import { getDocument } from 'pdfjs-dist/webpack.mjs';
 
 const url = '/fw4.pdf';
 
